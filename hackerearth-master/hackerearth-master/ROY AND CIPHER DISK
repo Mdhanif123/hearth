@@ -1,0 +1,23 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+ 
+int main()
+{
+    int br_up; cin >> br_up;
+    for (int j = 0; j < br_up; j++) {
+        string linija; cin >> linija;
+        char pos = 'a';
+        for (int i = 0; i < linija.size(); i++) {
+            int pom = linija[i] - pos;
+            if (pom < -12)
+                pom = 26 - abs(pom);
+            else if (pom > 13)
+                pom = abs(pom) - 26;
+            cout << pom << ' ';
+            pos = linija[i];
+        }
+        cout << endl;
+    }
+    return 0;
+}

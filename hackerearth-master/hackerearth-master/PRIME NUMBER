@@ -1,0 +1,19 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+	int num,i,fact,j;
+	cin>>num;              	
+	
+	for(i=2; i<=num; i++)
+    {
+        fact = 1; 
+        for(j=2; j<=i/2; j++)
+        {
+            if(i%j==0)
+                fact = 0;
+        }
+        if(fact==1)
+            printf("%d ", i);
+    }
+    }

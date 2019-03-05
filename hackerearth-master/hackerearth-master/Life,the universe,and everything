@@ -1,0 +1,8 @@
+var a:longint;
+begin
+read(A);
+while a<>42 do begin
+writeln(a);
+read(a);
+end;
+end.

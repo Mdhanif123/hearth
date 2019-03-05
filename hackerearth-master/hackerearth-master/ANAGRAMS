@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+class TestClass {
+
+	public static int getCount(char c, char[] arr) {
+
+		int sum = 0;
+		for (char ch : arr) {
+			if (ch == c)
+				sum++;
+		}
+
+		return sum;
+	}
+
+	public static void main(String args[]) {
+		Scanner s = new Scanner(System.in);
+		int k = Integer.parseInt(s.nextLine());
+
+		for (int i = 0; i < k; ++i) {
+			int sum = 0;
+			char[] ch1 = s.nextLine().toCharArray();
+			char[] ch2 = s.nextLine().toCharArray();
+
+			char[] alphabet = new char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
+					'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+			for (char c : alphabet) {
+				sum += Math.abs(getCount(c, ch1) - getCount(c, ch2));
+			}
+
+			System.out.println(sum);
+
+		}
+		s.close();
+	}
+}
